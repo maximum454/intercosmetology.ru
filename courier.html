@@ -50,7 +50,7 @@
         cursor: pointer;
     }
     .courier__smile-img.active{
-        background-color: #4b008d;
+        background-color: rgba(74,0,141,.8);
     }
 
     .courier__smile-img img {
@@ -134,14 +134,14 @@
             <button type="button" class="courier__btn">Отправить</button>
         </div>
         <div class="courier__happy d-none">
-            <div class="courier__label">Будем рады Вашему комментарию!</div>
-            <textarea class="form-control" name="happy" id="happy" cols="30" rows="4"></textarea>
             <div class="courier__group-btn">
                 <button type="button" class="courier__btn">Оставить чаевые</button>
                 <button type="button" class="courier__btn">вернуться в каталог</button>
             </div>
         </div>
         <div class="courier__grinning d-none">
+            <div class="courier__label">Будем рады Вашему комментарию!</div>
+            <textarea class="form-control" name="happy" id="happy" cols="30" rows="4"></textarea>
             <div class="courier__group-btn">
                 <button type="button" class="courier__btn">Оставить чаевые</button>
                 <button type="button" class="courier__btn">вернуться в каталог</button>
@@ -154,19 +154,22 @@
     $(function (){
         $('.courier__smile-img').on('click', function (e){
             let smile = $(this).data('smile');
-
+            $('.courier__smile-img').removeClass('active')
             if(smile == 'wrong'){
                 $('.courier__wrong').removeClass('d-none');
                 $('.courier__happy').addClass('d-none');
                 $('.courier__grinning').addClass('d-none');
+                $(this).addClass('active')
             }else if(smile == 'happy'){
                 $('.courier__wrong').addClass('d-none');
                 $('.courier__happy').removeClass('d-none');
                 $('.courier__grinning').addClass('d-none');
+                $(this).addClass('active')
             }else if(smile == 'grinning'){
                 $('.courier__wrong').addClass('d-none');
                 $('.courier__happy').addClass('d-none');
                 $('.courier__grinning').removeClass('d-none');
+                $(this).addClass('active')
             }
             return false;
         })
