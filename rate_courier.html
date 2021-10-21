@@ -1,0 +1,75 @@
+	<div class="app-page" id="${ID}" data-buttons_class="${CLASS}" data-header_class="${CLASS}" data-title="${TITLE}" data-share="${SHARE}">
+		<content class="section scrollable">
+			<div class="content" id="${ID}_wrapper">
+
+
+				<div class="showbox_loader"><div class="loader"><span></span><svg class="circular" viewBox="25 25 50 50"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div></div>
+
+			</div>
+		</content>
+		<div class="filter_popup adress_popup fixed">
+			<div class="filter_popup_header">
+				<a class="btn close">Отмена</a>
+				<h1>Адрес доставки</h1>
+				<a class="btn saveaddress right">Сохранить</a>
+			</div>
+			<div class="filter_popup_content">
+				<div class="register_block">
+					<form class="adress_form form">
+						<input type="hidden" name="ID">
+						<input type="hidden" name="LOCATION">
+						<label>
+							<input type="text" class="btn field" name="ZIP">
+							<span>Индекс</span>
+						</label>
+						<label class="select_city">
+							<input type="text" class="btn field" name="CITY_NAME">
+							<span>Город</span>
+							<div class="cities"></div>
+						</label>
+						<label>
+							<input type="text" class="btn field" name="ADDRESS">
+							<span>Адрес</span>
+						</label>
+
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="filter_popup vacancy_response_popup fixed">
+			<div class="filter_popup_header">
+				<a class="btn close">Отмена</a>
+				<h1>Отклик на вакансию</h1>
+				<a class="btn send_resume right">Отправить</a>
+			</div>
+			<div class="filter_popup_content">
+				<div class="register_block">
+					<form class="vacancy_response form">
+						<input name="action" value="send_resume" type="hidden">
+						<input name="request" value="actions" type="hidden">
+						<input type="hidden" name="form[VACANCY]">
+						<label>
+							<input type="text" class="btn field" name="form[NAME]">
+							<span>Ваше имя</span>
+						</label>
+						<label class="select_city">
+							<input type="text" class="btn field" name="form[PHONE]">
+							<span>Ваш телефон</span>
+							<div class="cities"></div>
+						</label>
+						<label>
+							<input type="text" class="btn field" name="form[EMAIL]">
+							<span>Ваш E-mail</span>
+						</label>
+						<label>
+							<textarea class="btn field" name="form[RESUME]"></textarea>
+							<span>Расскажите о себе</span>
+						</label>
+
+					</form>
+					<p>Нажимая на кнопку "Отправить" вы даёте своё соглашение на обработку персональных данных в соответствии с <a onclick="window.open($(this).attr('href'), '_system'); return false;" href="https://www.intercosmetology.ru/company/privacy/">Пользовательским соглашением</a></p>
+				</div>
+			</div>
+		</div>
+
+	</div>

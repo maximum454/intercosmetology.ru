@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Оцените вашего курьера</title>
+</head>
+<body>
+<style>
+    .courier {
+        font-family: "Open Sans";
+        box-sizing: border-box;
+    }
+
+    .courier__title {
+        font-size: 23px;
+        line-height: 1.1;
+        text-align: center;
+        margin: 20px 0 30px;
+    }
+
+    .courier__body {
+    }
+
+    .courier__smile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .courier__smile-img {
+        margin: 0 5px;
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .courier__smile-img.active{
+        background-color: #4b008d;
+    }
+
+    .courier__smile-img img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .courier__wrong {
+        margin-bottom: 10px;
+    }
+
+    .courier__happy {
+        margin-bottom: 10px;
+    }
+
+    .courier__label {
+        font-size: 13px;
+        line-height: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .courier__group-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .courier__btn {
+        width: fit-content;
+        padding: 0 20px;
+        display: block;
+        background-color: #4b008d;
+        border-radius: 18px;
+        color: #fff;
+        font-size: 11px;
+        text-transform: uppercase;
+        line-height: 34px;
+        text-align: center;
+        border: none;
+        margin: 0 3px;
+        cursor: pointer;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+    .d-none{
+        display: none;
+    }
+</style>
+<div class="courier">
+    <div class="courier__title">Оцените<br> вашего курьера</div>
+    <div class="courier__body">
+        <div class="courier__smile">
+            <div class="courier__smile-img" data-smile="wrong"><img src="./pensive.png" width="24" height="24" alt=""></div>
+            <div class="courier__smile-img" data-smile="happy"><img src="./slight_smile.png" width="24" height="24" alt=""></div>
+            <div class="courier__smile-img" data-smile="grinning"><img src="./grinning_smile.png" width="24" height="24" alt=""></div>
+        </div>
+        <div class="courier__wrong d-none">
+            <div class="courier__label">Расскажите, что не так?</div>
+            <textarea class="form-control" name="wrong" id="wrong" cols="30" rows="4"></textarea>
+            <button type="button" class="courier__btn">Отправить</button>
+        </div>
+        <div class="courier__happy d-none">
+            <div class="courier__label">Будем рады Вашему комментарию!</div>
+            <textarea class="form-control" name="happy" id="happy" cols="30" rows="4"></textarea>
+            <div class="courier__group-btn">
+                <button type="button" class="courier__btn">Оставить чаевые</button>
+                <button type="button" class="courier__btn">вернуться в каталог</button>
+            </div>
+        </div>
+        <div class="courier__grinning d-none">
+            <div class="courier__group-btn">
+                <button type="button" class="courier__btn">Оставить чаевые</button>
+                <button type="button" class="courier__btn">вернуться в каталог</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    $(function (){
+        $('.courier__smile-img').on('click', function (e){
+            let smile = $(this).data('smile');
+
+            if(smile == 'wrong'){
+                $('.courier__wrong').removeClass('d-none');
+                $('.courier__happy').addClass('d-none');
+                $('.courier__happy').addClass('d-none');
+            }else if(smile == 'happy'){
+                $('.courier__wrong').addClass('d-none');
+                $('.courier__happy').removeClass('d-none');
+                $('.courier__grinning').addClass('d-none');
+            }else if(smile == 'grinning'){
+                $('.courier__wrong').addClass('d-none');
+                $('.courier__happy').addClass('d-none');
+                $('.courier__grinning').removeClass('d-none');
+            }
+            return false;
+        })
+    })
+
+</script>
+</body>
+</html>
