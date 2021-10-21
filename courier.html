@@ -61,13 +61,8 @@
         height: auto;
         object-fit: contain;
     }
-
-    .courier__wrong {
-        margin-bottom: 10px;
-    }
-
-    .courier__happy {
-        margin-bottom: 10px;
+    .courier__form{
+        min-height: 248px;
     }
 
     .courier__label {
@@ -130,6 +125,7 @@
             <div class="courier__smile-img" data-smile="happy"><img src="./slight_smile.png" width="24" height="24" alt=""></div>
             <div class="courier__smile-img" data-smile="grinning"><img src="./grinning_smile.png" width="24" height="24" alt=""></div>
         </div>
+        <div class="courier__form">
         <div class="courier__wrong d-none">
             <div class="courier__label">Расскажите, что не так?</div>
             <textarea class="form-control" name="wrong" id="wrong" cols="30" rows="4"></textarea>
@@ -149,6 +145,7 @@
                 <button type="button" class="courier__btn">Оставить чаевые</button>
                 <button type="button" class="courier__btn">вернуться в каталог</button>
             </div>
+        </div>
         </div>
     </div>
 </div>
