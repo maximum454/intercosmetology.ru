@@ -50,8 +50,9 @@
         cursor: pointer;
         transition: all .3s ease;
     }
-    .courier__smile-img.active{
-        background-color: rgba(74,0,141,.8);
+
+    .courier__smile-img.active {
+        background-color: rgba(74, 0, 141, .8);
         transition: all .3s ease;
     }
 
@@ -61,8 +62,9 @@
         height: auto;
         object-fit: contain;
     }
-    .courier__form{
-        min-height: 248px;
+
+    .courier__form {
+        min-height: 255px;
     }
 
     .courier__label {
@@ -80,14 +82,14 @@
 
     .courier__btn {
         width: fit-content;
-        padding: 0 20px;
+        padding: 11px 20px;
         display: block;
         background-color: #4b008d;
         border-radius: 18px;
         color: #fff;
         font-size: 11px;
         text-transform: uppercase;
-        line-height: 34px;
+        line-height: 1.2;
         text-align: center;
         border: none;
         margin: 0 3px 10px;
@@ -113,7 +115,8 @@
         box-sizing: border-box;
         margin-bottom: 20px;
     }
-    .d-none{
+
+    .d-none {
         display: none;
     }
 </style>
@@ -121,51 +124,55 @@
     <div class="courier__title">Оцените<br> вашего курьера</div>
     <div class="courier__body">
         <div class="courier__smile">
-            <div class="courier__smile-img" data-smile="wrong"><img src="./pensive.png" width="24" height="24" alt=""></div>
-            <div class="courier__smile-img" data-smile="happy"><img src="./slight_smile.png" width="24" height="24" alt=""></div>
-            <div class="courier__smile-img" data-smile="grinning"><img src="./grinning_smile.png" width="24" height="24" alt=""></div>
+            <div class="courier__smile-img" data-smile="wrong"><img src="./pensive.png" width="24" height="24" alt="">
+            </div>
+            <div class="courier__smile-img" data-smile="happy"><img src="./slight_smile.png" width="24" height="24"
+                                                                    alt=""></div>
+            <div class="courier__smile-img" data-smile="grinning"><img src="./grinning_smile.png" width="24" height="24"
+                                                                       alt=""></div>
         </div>
         <div class="courier__form">
-        <div class="courier__wrong d-none">
-            <div class="courier__label">Расскажите, что не так?</div>
-            <textarea class="form-control" name="wrong" id="wrong" cols="30" rows="4"></textarea>
-            <button type="button" class="courier__btn">Отправить</button>
-        </div>
-        <div class="courier__happy d-none">
-            <div class="courier__group-btn">
-                <button type="button" class="courier__btn">Оставить чаевые</button>
-                <button type="button" class="courier__btn">вернуться в каталог</button>
+            <div class="courier__wrong d-none">
+                <div class="courier__label">Расскажите, что не так?</div>
+                <textarea class="form-control" name="wrong" id="wrong" cols="30" rows="4"></textarea>
+                <button type="button" class="courier__btn">Отправить</button>
             </div>
-        </div>
-        <div class="courier__grinning d-none">
-            <div class="courier__label">Будем рады Вашему комментарию!</div>
-            <textarea class="form-control" name="happy" id="happy" cols="30" rows="4"></textarea>
-            <button type="button" class="courier__btn">Отправить</button>
-            <div class="courier__group-btn">
-                <button type="button" class="courier__btn">Оставить чаевые</button>
-                <button type="button" class="courier__btn">вернуться в каталог</button>
+            <div class="courier__happy d-none">
+                <div class="courier__group-btn">
+                    <button type="button" class="courier__btn">Оставить чаевые</button>
+                    <button type="button" class="courier__btn">вернуться в каталог</button>
+                </div>
             </div>
-        </div>
+            <div class="courier__grinning d-none">
+                <div class="courier__group-btn">
+                    <button type="button" class="courier__btn">Оставить чаевые</button>
+                    <button type="button" class="courier__btn">вернуться в каталог</button>
+                </div>
+                <div class="courier__label">Будем рады Вашему комментарию!</div>
+                <textarea class="form-control" name="grinning" id="grinning" cols="30" rows="4"></textarea>
+                <button type="button" class="courier__btn">Отправить</button>
+            </div>
         </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
-    $(function (){
-        $('.courier__smile-img').on('click', function (e){
+    $(function () {
+        $('.courier__smile-img').on('click', function (e) {
             let smile = $(this).data('smile');
             $('.courier__smile-img').removeClass('active')
-            if(smile == 'wrong'){
+            if (smile == 'wrong') {
                 $('.courier__wrong').removeClass('d-none');
                 $('.courier__happy').addClass('d-none');
                 $('.courier__grinning').addClass('d-none');
                 $(this).addClass('active')
-            }else if(smile == 'happy'){
+            } else if (smile == 'happy') {
                 $('.courier__wrong').addClass('d-none');
                 $('.courier__happy').removeClass('d-none');
                 $('.courier__grinning').addClass('d-none');
                 $(this).addClass('active')
-            }else if(smile == 'grinning'){
+            } else if (smile == 'grinning') {
                 $('.courier__wrong').addClass('d-none');
                 $('.courier__happy').addClass('d-none');
                 $('.courier__grinning').removeClass('d-none');
